@@ -1,0 +1,157 @@
+/* Global Styles */
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #F2F2F2;
+}
+
+/*Header when scroll = 0*/
+header {
+    padding: 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #333333;
+    transition: 0.1s;
+    margin-bottom: 25px;
+}
+/*header when scroll = 1*/
+header.sticky{
+    padding: 0px;
+    background-color: #333333;
+
+}
+/*items in navbar*/
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/*4s logo*/
+.logo img {
+    height: 100px; 
+}
+/*links position*/
+.nav-links {
+    display: flex;
+    gap: 30px;
+    padding-right: 100px;
+}
+/*link styles*/
+.nav-links a {
+    color: #FFF;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 25px;
+}
+/*link styles on hover*/
+.nav-links a:hover {
+    color: #F68B28;
+    font-size: 30px;
+    transition: 0.2s;
+    font-style: bold;
+}
+
+
+/* Hamburger icon hidden on desktop */
+.icon {
+    display: none;
+}
+.projecttxt {
+    border: 2px solid black;
+    color: #333333;
+    margin-bottom: 25px;
+}
+
+.projecttxt:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+    transition: 0.3s;
+}
+
+
+.maintxt {
+    padding: 10px;
+    font-size: 30px;
+}
+
+.h1 {
+    font-size: 40px;
+}
+
+/* 1st row of projects */
+.mainRow {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap; /* This allows items to wrap when necessary */
+}
+
+.projectpic {
+    height: 300px;
+}
+
+.card {
+    text-align: center;
+    color: #333333;
+    height: 800px;
+    width: 23%;
+    border: 2px solid #333333;
+    box-sizing: border-box;
+}
+
+.card:hover {
+    transform: scale(1.065);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+}
+
+
+/* Mobile Styles */
+@media only screen and (max-width: 600px) {
+    
+    .mainRow {
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center; /* Center the cards */
+    }
+
+    .card {
+        width: 80%; /* Adjust width for smaller screens */
+        margin-bottom: 20px; /* Add space between the cards */
+    }
+    .card:hover {
+        width: 100%;
+    }
+
+    /* Show hamburger icon on mobile */
+    .icon {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 14px;
+        color: white;
+        cursor: pointer;
+    }
+    
+    /* Hide nav-links by default on mobile and style dropdown */
+    .nav-links {
+        display: none; /* Toggled via JavaScript */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;  /* Directly below the nav (and header) */
+        left: 0;
+        right: 0;
+        background-color: #333333;
+        z-index: 999; /* Ensure it appears on top */
+    }
+    
+    .nav-links a {
+        border-top: 1px solid #444;
+        font-size: 23px;
+        text-align: center;
+    }
+
+    .nav-links a:hover {
+        color: #F68B28;
+        transition: 0.3s;
+        font-size: 23px;
+    }
+}
