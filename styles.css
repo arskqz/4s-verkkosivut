@@ -10,14 +10,14 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: #333333;
+    background: linear-gradient(to right, #F68B28, #7cc28b);
     transition: 0.1s;
     margin-bottom: 25px;
 }
 /*header when scroll = 1*/
 header.sticky{
     padding: 0px;
-    background-color: #333333;
+    background: linear-gradient(to right, #F68B28, #7cc28b);
 
 }
 /*items in navbar*/
