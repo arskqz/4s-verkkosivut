@@ -83,6 +83,7 @@ nav {
     align-items: flex-start;
     justify-content: space-between;
     flex-wrap: wrap; /* This allows items to wrap when necessary */
+    padding-bottom: 50px;
 }
 
 .projectpic {
@@ -101,6 +102,48 @@ nav {
 .card:hover {
     transform: scale(1.065);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+}
+.mainFooter {
+    background: linear-gradient(to right, #F68B28, #7cc28b);
+    padding: 20px;
+}
+.footerCard {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap; /* This allows items to wrap when necessary */
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
+}
+
+.links a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+
+.infoLinks {
+    display: flex;
+    justify-content: center;
+    gap: 10px; 
+}
+
+.infoLinks a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+
+.footerImg {
+    gap: 50px;
+}
+
+.siteLogos {
+    width: 160px;
 }
 
 
