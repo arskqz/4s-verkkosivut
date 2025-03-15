@@ -1,0 +1,150 @@
+.mainFooter {
+    background: linear-gradient(to right, #7cc25b, #F68B28);
+    padding: 20px;
+}
+.footerCard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    padding-right: 150px; 
+    padding-left: 50px;
+    
+}
+.Logos {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.gitImg {
+    width: 40px;
+}
+.gitImg:hover {
+    transform: scale(1.2);
+}
+.InstaImg {
+    width: 40px;
+}
+.InstaImg:hover {
+    transform: scale(1.2);
+}
+.TiktokImg {
+    width: 40px;
+}
+.TiktokImg:hover {
+    transform: scale(1.2);
+}
+
+.contact-links {
+    display: flex;
+    gap: 150px; /* Space between contact and links */
+    font-family: inherit;
+}
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    font-size: 35px;
+    gap: 5px;
+}
+.links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    gap: 5px;
+    font-family: inherit;
+}
+
+.links a {
+    display: inline-block;
+    position: relative;
+    color: black;
+    font-size: 35px;
+    text-decoration: none;
+}
+.links a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    border-radius: 5px;
+    height: 0.05em;
+    bottom: 0;
+    left: 0;
+    background: #F68B28;
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+.links a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.infoLinks {
+    display: flex;
+    justify-content: center;
+    gap: 10px; 
+    font-family: inherit;
+}
+
+.infoLinks a {
+    display: flex;
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+.footerImg {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.siteLogo1 {
+    width: 225px;
+}
+.siteLogo2 {
+    width: 300px;
+}
+@media only screen and (max-width: 1500px) {
+    .footerImg {
+        display: none;
+    }
+}
+    
+@media only screen and (max-width: 1000px) {
+    
+    .footerCard {
+        flex-direction: column; 
+        align-items: center; 
+        justify-content: center;
+        padding: 0;
+    }
+    .Logos {
+        flex-direction: row;
+    }
+    .contact-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+    }
+    .contact {
+        font-size: 25px;
+    }
+
+    .infoLinks {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footerImg {
+        display: flex;
+        justify-content: center;
+        flex-direction: column-reverse;
+        width: 100%;
+        padding: 0;
+        padding-bottom: 50px;
+    }
+}
