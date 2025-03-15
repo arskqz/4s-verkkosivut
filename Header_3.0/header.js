@@ -1,5 +1,5 @@
 // Mobile hamburger menu
-function myFunction() {
+function showLinks() {
     const navLinks = document.querySelector(".nav-links");
     // Toggle between 'block' and 'none'
     if (navLinks.style.display === "block") {
