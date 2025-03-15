@@ -1,8 +1,10 @@
 /* Global Styles */
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: #F2F2F2;
+    background-color: #fff;
 }
+
+/* TODO Font style -- dropdown cleaner */
 
 /*Header when scroll = 0*/
 header {
@@ -10,15 +12,15 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: #333333;
+    background-color: rgb(0 0 0 / 30%);
+    backdrop-filter: blur(2px);
     transition: 0.1s;
     margin-bottom: 25px;
 }
 /*header when scroll = 1*/
 header.sticky{
     padding: 0px;
-    background: #333333;
-
+    background-color: rgb(0 0 0 / 25%);
 }
 /*items in navbar*/
 nav {
@@ -32,23 +34,11 @@ nav {
 }
 /*links position*/
 .nav-links {
-    display: flex;
+    display: flex; /* or 'none' for mobile */
     gap: 30px;
-    padding-right: 100px;
-}
-/*link styles*/
-.nav-links a {
-    color: #FFF;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 25px;
-}
-/*link styles on hover*/
-.nav-links a:hover {
-    color: #F68B28;
-    font-size: 30px;
-    transition: 0.2s;
-    font-style: bold;
+    padding-right: 200px;
+    position: relative;
+    color: #F2F2F2;
 }
 
 /* Hamburger icon hidden on desktop */
@@ -56,7 +46,86 @@ nav {
     display: none;
 }
 
-@media only screen and (max-width: 600px) {
+/* The dropdown container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    width: 250%;
+    top: 100%;
+    left: 0;
+    background-color: rgb(0, 0, 0, 0.65);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); 
+    z-index: 1000;   
+    padding: 2px 2px 2px 2px;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+    font-size: 30px;
+    border: none;
+    color: #F2F2F2;
+    font-weight: bold;
+    background-color: inherit;
+    font-family: inherit; 
+    margin: 0; /* Important for vertical align on mobile phones */
+    
+}
+
+.dropdown-content a {
+    position: relative;
+    float: none;
+    color: #f2f2f2;
+    padding: 12px 12px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+/*link styles*/
+.nav-links a {
+    position: relative;
+    color: #F2F2F2;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.nav-links a:hover {
+    color: #f2f2f2;
+    display: flex;
+    position: relative;
+    text-decoration: none;
+}
+/* Underline animation */
+.nav-links a::after, .dropdown .dropdown-content a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    border-radius: 5px;
+    height: 0.05em;
+    bottom: 0;
+    left: 0;
+    background: #F68B28;
+    transform-origin: bottom right;
+    transition:  transform 0.3s ease-out;
+}
+
+.nav-links a:hover::after, .dropdown .dropdown-content a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/*Togles visibility of dropdown*/
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+@media only screen and (max-width: 950px) {
     
     /* Show hamburger icon on mobile */
     .icon {
@@ -68,7 +137,6 @@ nav {
         color: white;
         cursor: pointer;
     }
-    
     /* Hide nav-links by default on mobile and style dropdown */
     .nav-links {
         display: none; /* Toggled via JavaScript */
@@ -77,20 +145,34 @@ nav {
         top: 100%;  /* Directly below the nav (and header) */
         left: 0;
         right: 0;
-        background-color: #333333;
+        background-color: rgb(0, 0, 0, 0.65);
         z-index: 999; /* Ensure it appears on top */
+        padding: 5px;
     }
-    
     .nav-links a {
+        display: flex;
         border-top: 1px solid transparent;
-        font-size: 20px;
-        text-align: center;
+        flex-direction: column;
+        font-size: 25px;
+        text-align: left;
+        padding: 3px;
         color: #F2F2F2;
+        text-decoration: none;
     }
-
     .nav-links a:hover {
-        color: #F68B28;
-        transition: 0.3s;
-        font-size: 20px;
+        font-size: 25px;
+    }
+    /*Hide palvelut dropdown on mobile*/
+    .dropdown:hover .dropdown-content {
+        display: none;
+    }
+    .nav-links a::after, 
+    .dropdown .dropdown-content a::after {
+        content: none; /* Hide underline effect on mobile */
+    }
+    .dropdown .dropbtn {
+        font-size: 25px;
+        text-decoration: none;
+        padding: 0;
     }
 }
