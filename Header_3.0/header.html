@@ -14,13 +14,21 @@
         <img src="https://4spalvelut.fi/wp-content/uploads/2024/09/4S-Logo.png" alt="Etusivu">
           </a>
             <div class="nav-links">
-              <a href="https://4spalvelut.fi/index.php/palvelut/">Palvelut</a>
+              <div class="dropdown">
+                <a href="https://4spalvelut.fi/index.php/palvelut/"><button class="dropbtn">Palvelut</button></a>
+                <div class="dropdown-content">
+                    <a href="https://4spalvelut.fi/index.php/kesa/">Kesän palvelut</a>
+                    <a href="https://4spalvelut.fi/index.php/talvi/">Talvi palvelut</a>
+                    <a href="https://4spalvelut.fi/index.php/autopalvelut/">Auto palvelut</a>
+                    <a href="https://4spalvelut.fi/index.php/rakennus/">Pien-Rakentaminen</a>
+                </div>
+            </div>            
               <a href="https://4spalvelut.fi/index.php/vuokraus/">Vuokraus</a>
               <a href="https://4spalvelut.fi/index.php/projektit/">Projektit</a>
               <a href="https://4spalvelut.fi/index.php/ota-yhteytta/">Ota yhteyttä</a>
             </div>
             <!-- Hamburger menu icon; click toggles nav-links on mobile -->
-          <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <a href="javascript:void(0);" class="icon" onclick="showLinks()">
         <i class="fa fa-bars"></i>
       </a>
     </nav>
