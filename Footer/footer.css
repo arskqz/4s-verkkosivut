@@ -15,7 +15,8 @@
 .Logos {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    align-items: center;
+    gap: 15px;
 }
 .gitImg {
     width: 40px;
@@ -38,14 +39,15 @@
 
 .contact-links {
     display: flex;
-    gap: 150px; /* Space between contact and links */
+    gap: 100px; /* Space between contact and links */
     font-family: inherit;
 }
 .contact {
     display: flex;
     flex-direction: column;
     align-items: flex-start; 
-    font-size: 35px;
+    font-size: 30px;
+    color: #f2f2f2;
     gap: 5px;
 }
 .links {
@@ -59,8 +61,8 @@
 .links a {
     display: inline-block;
     position: relative;
-    color: black;
-    font-size: 35px;
+    color: #f2f2f2;
+    font-size: 30px;
     text-decoration: none;
 }
 .links a::after {
@@ -125,6 +127,10 @@
     .Logos {
         flex-direction: row;
     }
+    .links {
+        align-items: center;
+        
+    }
     .contact-links {
         display: flex;
         flex-direction: column;
@@ -133,6 +139,7 @@
     }
     .contact {
         font-size: 25px;
+        align-items: center;
     }
 
     .infoLinks {
