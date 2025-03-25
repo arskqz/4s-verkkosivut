@@ -4,8 +4,6 @@ body {
     background-color: #fff;
 }
 
-/* TODO Font style -- dropdown cleaner */
-
 /*Header when scroll = 0*/
 header {
     padding: 30px;
@@ -124,6 +122,16 @@ nav {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+.arrow {
+    display: none;
+}
+
+/* Show dropdown on hover for desktop */
+@media only screen and (min-width: 951px) {
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+}
 
 @media only screen and (max-width: 950px) {
     
@@ -170,9 +178,52 @@ nav {
     .dropdown .dropdown-content a::after {
         content: none; /* Hide underline effect on mobile */
     }
+   
+    /* palvelut dropdown on mobile*/
+    .dropdown {
+        width: 100%;
+    }
     .dropdown .dropbtn {
         font-size: 25px;
+    }
+
+    .dropbtn {
+        width: 100%;
+        text-align: left;
+        background: none;
+        border: none;
+        color: #F2F2F2;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between; 
+        align-items: center;
+    }
+
+     /* Show arrow only on mobile */
+     .arrow {
+        display: inline-block;
+        transition: transform 0.3s ease;
+    }
+
+    .arrow.open {
+        transform: rotate(180deg);
+    }
+
+    .dropdown-content {
+        position: static;
+        display: none;
+        background-color: rgb(0, 0, 0, 0.4); 
+        width: 100%;
+    }
+
+    .dropdown-content a {
+        display: block;
+        padding: 10px;
         text-decoration: none;
-        padding: 0;
+        color: #F2F2F2; 
+    }
+
+    .dropdown-content a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
     }
 }
